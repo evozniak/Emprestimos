@@ -17,7 +17,7 @@ namespace ProcessarRecebiveis
                 log.Debug("Construindo repositórios para injeção de dependência.");
                 var repoBuilder = ApplicationFactory.CreateRepo();
                 var recebivel = repoBuilder.BuildRepoRecebivel();
-                var cancel = new CancellationToken();
+                var cancel = new CancellationToken(); 
 
                 var controle = new RecebivelController(log, repoBuilder.BuildRepoRecebivel(), cancel);
                 if (cancel.IsCancellationRequested)
